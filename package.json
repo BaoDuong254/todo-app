@@ -1,8 +1,23 @@
 {
     "name": "todoapp",
-    "private": true,
     "version": "1.0.0",
+    "private": true,
+    "description": "Simple ToDo App with React",
+    "keywords": [
+        "React"
+    ],
+    "homepage": "https://github.com/BaoDuong254/todo-app#readme",
+    "bugs": {
+        "url": "https://github.com/BaoDuong254/todo-app/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BaoDuong254/todo-app.git"
+    },
+    "license": "ISC",
+    "author": "BaoDuong254 <duonggiabao254@gmail.com>",
     "type": "module",
+    "main": "eslint.config.js",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
