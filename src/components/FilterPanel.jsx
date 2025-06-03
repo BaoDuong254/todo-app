@@ -56,15 +56,18 @@ const FilterPanel = () => {
 
     return (
         <div className="filter-panel">
-            <input
-                type="text"
-                placeholder="search"
-                name="search-text"
-                value={searchText}
-                onChange={(e) => {
-                    setSearchText(e.target.value);
-                }}
-            />
+            <div className="search-input-wrapper">
+                <span className="search-icon">🔍</span>
+                <input
+                    type="text"
+                    placeholder="Search"
+                    name="search-text"
+                    value={searchText}
+                    onChange={(e) => {
+                        setSearchText(e.target.value);
+                    }}
+                />
+            </div>
             <div className="filter-container">
                 {FILTER_ITEMS.map((item) => (
                     <div
@@ -81,7 +84,9 @@ const FilterPanel = () => {
                             />
                             <p>{item.label}</p>
                         </div>
-                        <p>{countByFilterType[item.id]}</p>
+                        <p className="filter-count">
+                            {countByFilterType[item.id]}
+                        </p>
                     </div>
                 ))}
             </div>

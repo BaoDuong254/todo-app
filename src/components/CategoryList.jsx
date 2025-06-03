@@ -46,8 +46,15 @@ const CategoryList = () => {
                                 }
                             }}
                         >
-                            <p className="category-name">{category.label}</p>
-                            <p>{countByCategory[category.id]}</p>
+                            <div className="category-label-group">
+                                <span>📁</span>
+                                <p className="category-name">
+                                    {category.label}
+                                </p>
+                            </div>
+                            <p className="category-count">
+                                {countByCategory[category.id]}
+                            </p>
                         </div>
                     );
                 })}

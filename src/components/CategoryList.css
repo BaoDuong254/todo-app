@@ -2,13 +2,38 @@
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    padding: 10px 0px;
+    user-select: none;
 }
 
 .category-item:hover {
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 
+.category-label-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.category-name {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.category-count {
+    color: #a3a3a3;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
 .selected {
     background-color: #0f548c;
+    color: white;
+}
+
+.selected .category-count {
     color: white;
 }

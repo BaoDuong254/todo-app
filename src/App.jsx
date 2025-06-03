@@ -56,30 +56,33 @@ function App() {
         <div className="container">
             <FilterPanel />
             <div className="main-content">
-                <input
-                    ref={inputRef}
-                    type="text"
-                    name="add-new-task"
-                    placeholder="Add new task"
-                    className="task-input"
-                    onKeyDown={(e) => {
-                        if (e.key === "Enter") {
-                            const value = e.target.value.trim();
-                            setTodoList([
-                                ...todoList,
-                                {
-                                    id: crypto.randomUUID(),
-                                    name: value,
-                                    isImportant: false,
-                                    isCompleted: false,
-                                    isDeleted: false,
-                                    category: "personal",
-                                },
-                            ]);
-                            inputRef.current.value = "";
-                        }
-                    }}
-                />
+                <div className="add-task-input">
+                    <span className="plus-icon">+</span>
+                    <input
+                        ref={inputRef}
+                        type="text"
+                        name="add-new-task"
+                        placeholder="Add new task"
+                        className="task-input"
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                                const value = e.target.value.trim();
+                                setTodoList([
+                                    ...todoList,
+                                    {
+                                        id: crypto.randomUUID(),
+                                        name: value,
+                                        isImportant: false,
+                                        isCompleted: false,
+                                        isDeleted: false,
+                                        category: "personal",
+                                    },
+                                ]);
+                                inputRef.current.value = "";
+                            }
+                        }}
+                    />
+                </div>
                 <div>
                     {filterTodos.map((todo) => {
                         return (
