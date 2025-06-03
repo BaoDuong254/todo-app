@@ -4,6 +4,7 @@ import TodoItem from "./components/TodoItem";
 import Sidebar from "./components/Sidebar";
 import FilterPanel from "./components/FilterPanel";
 import { useAppContext } from "./context/AppProvider";
+import { CATEGORY_ITEMS } from "./constants";
 
 function App() {
     const {
@@ -56,6 +57,18 @@ function App() {
         <div className="container">
             <FilterPanel />
             <div className="main-content">
+                <p className="selected-content">
+                    {selectedCategoryId
+                        ? CATEGORY_ITEMS.find(
+                              (item) => item.id === selectedCategoryId
+                          )?.label
+                        : {
+                              all: "All",
+                              important: "Important",
+                              completed: "Completed",
+                              deleted: "Deleted",
+                          }[selectedFilterId]}
+                </p>
                 <div className="add-task-input">
                     <span className="plus-icon">+</span>
                     <input
@@ -99,13 +112,14 @@ function App() {
                         );
                     })}
                 </div>
-                {showSidebar && (
+                {(activeTodoItemId || showSidebar) && (
                     <Sidebar
                         key={activeTodoItemId}
                         todoItem={activeTodoItem}
                         handleTodoItemChange={handleTodoItemChange}
                         setShowSidebar={setShowSidebar}
                         closeSidebar={closeSidebar}
+                        isVisible={showSidebar}
                     />
                 )}
             </div>

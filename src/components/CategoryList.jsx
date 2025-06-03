@@ -26,8 +26,8 @@ const CategoryList = () => {
     }, [todoList]);
 
     return (
-        <div>
-            <p>Categories</p>
+        <div className="category-list">
+            <p className="category-title">Categories</p>
             <div>
                 {CATEGORY_ITEMS.map((category) => {
                     return (

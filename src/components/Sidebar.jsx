@@ -21,10 +21,9 @@ const Sidebar = (props) => {
     };
 
     return (
-        <div className="sidebar">
+        <div className={`sidebar ${props.isVisible ? "show" : ""}`}>
             <form className="sb-form">
                 <div className="sb-form-field">
-                    <label htmlFor="sb-name">Todo Name</label>
                     <input
                         type="text"
                         id="sb-name"

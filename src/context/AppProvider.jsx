@@ -45,7 +45,9 @@ const AppProvider = ({ children }) => {
     const handleToggleSidebar = (todoId) => {
         if (activeTodoItemId === todoId) {
             setShowSidebar(false);
-            setActiveTodoItemId(null);
+            setTimeout(() => {
+                setActiveTodoItemId(null);
+            }, 300);
         } else {
             setActiveTodoItemId(todoId);
             setShowSidebar(true);
@@ -76,7 +78,9 @@ const AppProvider = ({ children }) => {
 
     const closeSidebar = () => {
         setShowSidebar(false);
-        setActiveTodoItemId(null);
+        setTimeout(() => {
+            setActiveTodoItemId(null);
+        }, 300);
     };
 
     return (
