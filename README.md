@@ -1,12 +1,70 @@
-# React + Vite
+# ToDo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple ToDo App built with React and Vite.
 
-Currently, two official plugins are available:
+## Introduction
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a lightweight React project created using Vite. It demonstrates basic CRUD-style functionality for managing a list of tasks. The goal is to keep the codebase minimal and easy to understand, making it a great starting point for beginners who want to learn how to build a React application with Vite.
 
-## Expanding the ESLint configuration
+## Installation & Running the Project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Install dependencies**
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+2. **Start the development server**
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+
+3. **Open in browser**
+   By default, Vite will run on `http://localhost:5173`. Open this URL in your favorite browser to see the app in action.
+
+## Features
+
+- Add new tasks (todos)
+- Mark tasks as completed or important
+- Assign a category to each task
+- Edit task details via a slide-in sidebar
+
+## Known Limitations & Future Improvements
+
+Although this ToDo App covers the core task-management use cases, there are several features that are not yet implemented:
+
+- **Delete Task**
+  Currently, there is no option to delete a task. Tasks can be added and edited, but never removed.
+
+- **Data Persistence**
+  All tasks are stored in local state. As a result, any added or edited tasks will be lost when the page is reloaded. In the future, I plan to integrate a backend database to persist data across sessions.
+
+- **Authentication & Authorization**
+  There is no user login or account system. Implementing authentication would allow each user to have their own task list stored on a server.
+
+- **Responsiveness**
+  The current layout is static and not fully responsive on smaller screens.
+
+## Contributing
+
+Contributions are welcome! If you’d like to help improve this project, feel free to:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Make your changes and commit (`git commit -m "Add some feature"`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+Please make sure to follow standard best practices:
+
+- Write clear, concise commit messages.
+- Name your branch descriptively (e.g., `feature/add-delete-task`, `fix/responsive-sidebar`).
+- Update/add any relevant documentation or tests.
+- Keep PRs focused on a single change or feature request.
+
+Thank you for your interest in contributing! 🚀
