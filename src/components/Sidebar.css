@@ -1,0 +1,57 @@
+.sidebar {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40vw;
+    background-color: #f5f5f5;
+    position: fixed;
+    box-shadow: -2px 0 3px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sb-footer {
+    padding: 10px;
+    border-top: 1px solid gray;
+}
+
+.sb-form {
+    padding: 10px;
+}
+
+.sb-form-field {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.save-btn {
+    background-color: #479ef5;
+    width: 123px;
+    padding: 5px 12px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.save-btn:hover {
+    background-color: #357abd;
+}
+
+.cancel-btn {
+    background-color: white;
+    width: 123px;
+    padding: 5px 12px;
+    color: #479ef5;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.cancel-btn:hover {
+    background-color: #e0e0e0;
+}

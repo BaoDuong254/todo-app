@@ -1,0 +1,14 @@
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.category-item:hover {
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.selected {
+    background-color: #0f548c;
+    color: white;
+}
