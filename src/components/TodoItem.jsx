@@ -21,7 +21,11 @@ const TodoItem = (props) => {
                     onClick={(e) => e.stopPropagation()}
                     className="todo-item-checkbox"
                 />
-                <p className="todo-item-text">{props.name}</p>
+                <p
+                    className={`todo-item-next ${props.isCompleted ? "line-through" : ""}`}
+                >
+                    {props.name}
+                </p>
             </div>
             {props.isImportant && <p>⭐</p>}
         </div>
