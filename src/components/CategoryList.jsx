@@ -11,7 +11,7 @@ const CategoryList = () => {
         return todoList.reduce(
             (acc, todo) => {
                 let newAcc = { ...acc };
-                if (todo.category) {
+                if (todo.category && !todo.isDeleted) {
                     newAcc[todo.category] = (newAcc[todo.category] || 0) + 1;
                 }
                 return newAcc;

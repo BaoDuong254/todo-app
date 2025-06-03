@@ -20,6 +20,8 @@ function App() {
         handleTodoItemChange,
         handleCompleteCheckbox,
         closeSidebar,
+        handleDeleteTodoItem,
+        handleRestoreTodoItem,
     } = useAppContext();
 
     const activeTodoItem = todoList.find(
@@ -108,6 +110,7 @@ function App() {
                                 handleCompleteCheckbox={handleCompleteCheckbox}
                                 handleToggleSidebar={handleToggleSidebar}
                                 activeTodoItemId={activeTodoItemId}
+                                handleDeleteTodoItem={handleDeleteTodoItem}
                             />
                         );
                     })}
@@ -120,6 +123,8 @@ function App() {
                         setShowSidebar={setShowSidebar}
                         closeSidebar={closeSidebar}
                         isVisible={showSidebar}
+                        handleDeleteTodoItem={handleDeleteTodoItem}
+                        handleRestoreTodoItem={handleRestoreTodoItem}
                     />
                 )}
             </div>

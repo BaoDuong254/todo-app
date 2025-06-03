@@ -33,13 +33,11 @@ This is a lightweight React project created using Vite. It demonstrates basic CR
 - Mark tasks as completed or important
 - Assign a category to each task
 - Edit task details via a slide-in sidebar
+- Delete and restore task
 
 ## Known Limitations & Future Improvements
 
 Although this ToDo App covers the core task-management use cases, there are several features that are not yet implemented:
-
-- **Delete Task**
-  Currently, there is no option to delete a task. Tasks can be added and edited, but never removed.
 
 - **Data Persistence**
   All tasks are stored in local state. As a result, any added or edited tasks will be lost when the page is reloaded. In the future, I plan to integrate a backend database to persist data across sessions.

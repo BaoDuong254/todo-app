@@ -68,6 +68,44 @@ const Sidebar = (props) => {
                         })}
                     </select>
                 </div>
+                {!props.todoItem.isDeleted && (
+                    <div className="sb-form-field">
+                        Delete task
+                        <button
+                            className="delete-btn"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                const confirmDelete = confirm(
+                                    "Are you sure you want to delete this task?"
+                                );
+                                if (!confirmDelete) return;
+                                props.handleDeleteTodoItem(data.id);
+                                props.closeSidebar();
+                            }}
+                        >
+                            X
+                        </button>
+                    </div>
+                )}
+                {props.todoItem.isDeleted && (
+                    <div className="sb-form-field">
+                        Restore task
+                        <button
+                            className="restore-btn"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                const confirmDelete = confirm(
+                                    "Are you sure you want to restore this task?"
+                                );
+                                if (!confirmDelete) return;
+                                props.handleRestoreTodoItem(data.id);
+                                props.closeSidebar();
+                            }}
+                        >
+                            ⬆
+                        </button>
+                    </div>
+                )}
             </form>
             <div className="sb-footer">
                 <button className="save-btn" onClick={handleSave}>

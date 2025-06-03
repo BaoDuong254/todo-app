@@ -18,7 +18,7 @@ const AppProvider = ({ children }) => {
     const [todoList, setTodoList] = useState([
         {
             id: 1,
-            name: "Đi học thêm",
+            name: "Coding exercise",
             isImportant: false,
             isCompleted: true,
             isDeleted: false,
@@ -26,7 +26,7 @@ const AppProvider = ({ children }) => {
         },
         {
             id: 2,
-            name: "Đi học võ",
+            name: "Watch a movie",
             isImportant: true,
             isCompleted: false,
             isDeleted: false,
@@ -34,7 +34,7 @@ const AppProvider = ({ children }) => {
         },
         {
             id: 3,
-            name: "Đi ngủ",
+            name: "Camping",
             isImportant: false,
             isCompleted: false,
             isDeleted: false,
@@ -52,6 +52,28 @@ const AppProvider = ({ children }) => {
             setActiveTodoItemId(todoId);
             setShowSidebar(true);
         }
+    };
+
+    const handleDeleteTodoItem = (id) => {
+        setTodoList((prevList) => {
+            return prevList.map((todo) => {
+                if (todo.id === id) {
+                    return { ...todo, isDeleted: true };
+                }
+                return todo;
+            });
+        });
+    };
+
+    const handleRestoreTodoItem = (id) => {
+        setTodoList((prevList) => {
+            return prevList.map((todo) => {
+                if (todo.id === id) {
+                    return { ...todo, isDeleted: false };
+                }
+                return todo;
+            });
+        });
     };
 
     const handleTodoItemChange = (newTodo) => {
@@ -102,6 +124,8 @@ const AppProvider = ({ children }) => {
                 handleTodoItemChange,
                 handleCompleteCheckbox,
                 closeSidebar,
+                handleDeleteTodoItem,
+                handleRestoreTodoItem,
             }}
         >
             {children}

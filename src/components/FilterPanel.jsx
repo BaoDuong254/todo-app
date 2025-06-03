@@ -39,13 +39,14 @@ const FilterPanel = () => {
         return todoList.reduce(
             (acc, todo) => {
                 let newAcc = { ...acc };
-                if (todo.isCompleted) {
+                if (todo.isCompleted && !todo.isDeleted) {
                     newAcc = { ...newAcc, completed: newAcc.completed + 1 };
                 }
-                if (todo.isImportant) {
+                if (todo.isImportant && !todo.isDeleted) {
                     newAcc = { ...newAcc, important: newAcc.important + 1 };
                 }
                 if (todo.isDeleted) {
+                    newAcc = { ...newAcc, all: newAcc.all - 1 };
                     newAcc = { ...newAcc, deleted: newAcc.deleted + 1 };
                 }
                 return newAcc;
