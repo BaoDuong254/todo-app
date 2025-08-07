@@ -3,14 +3,13 @@ import "./App.css";
 import TodoItem from "./components/TodoItem";
 import Sidebar from "./components/Sidebar";
 import FilterPanel from "./components/FilterPanel";
-import { useAppContext } from "./context/AppProvider";
+import { useAppContext } from "./context/useAppContext";
 import { CATEGORY_ITEMS } from "./constants";
 
 function App() {
     const {
         selectedCategoryId,
         todoList,
-        setTodoList,
         searchText,
         selectedFilterId,
         showSidebar,
@@ -22,6 +21,7 @@ function App() {
         closeSidebar,
         handleDeleteTodoItem,
         handleRestoreTodoItem,
+        handleAddTodo,
     } = useAppContext();
 
     const activeTodoItem = todoList.find(
@@ -82,18 +82,14 @@ function App() {
                         onKeyDown={(e) => {
                             if (e.key === "Enter") {
                                 const value = e.target.value.trim();
-                                setTodoList([
-                                    ...todoList,
-                                    {
-                                        id: crypto.randomUUID(),
+                                if (value) {
+                                    handleAddTodo({
                                         name: value,
-                                        isImportant: false,
-                                        isCompleted: false,
-                                        isDeleted: false,
-                                        category: "personal",
-                                    },
-                                ]);
-                                inputRef.current.value = "";
+                                        category:
+                                            selectedCategoryId || "personal",
+                                    });
+                                    inputRef.current.value = "";
+                                }
                             }
                         }}
                     />

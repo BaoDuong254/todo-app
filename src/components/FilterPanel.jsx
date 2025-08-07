@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import "./FilterPanel.css";
 import CategoryList from "./CategoryList";
-import { useAppContext } from "../context/AppProvider";
+import { useAppContext } from "../context/useAppContext";
 
 const FILTER_ITEMS = [
     {

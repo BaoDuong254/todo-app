@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import "./CategoryList.css";
 import { CATEGORY_ITEMS } from "../constants";
-import { useAppContext } from "../context/AppProvider";
+import { useAppContext } from "../context/useAppContext";
 
 const CategoryList = () => {
     const { selectedCategoryId, setSelectedCategoryId, todoList } =

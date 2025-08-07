@@ -30,19 +30,35 @@ This is a lightweight React project created using Vite. It demonstrates basic CR
 - Assign a category to each task
 - Edit task details via a slide-in sidebar
 - Delete and restore task
+- **Local Data Persistence** - All tasks and app state are automatically saved to localStorage and persist across browser sessions
+
+## Data Persistence
+
+The app now includes automatic local storage persistence for:
+
+- **Todo list**: All tasks with their completion status, importance, and categories
+- **Selected category**: Remembers which category filter was last selected
+- **Filter state**: Remembers which filter (all, completed, important, etc.) was active
+- **Search text**: Preserves search queries between sessions
+
+Data is automatically saved whenever changes are made and restored when the app loads. Tasks and settings will persist even after closing and reopening the browser.
+
+### Clear Persisted Data
+
+If you need to reset the app to its default state, you can clear all persisted data by calling `clearPersistedData()` from the app context (useful for development/testing).
 
 ## Known Limitations & Future Improvements
 
 Although this ToDo App covers the core task-management use cases, there are several features that are not yet implemented:
-
-- **Data Persistence**
-  All tasks are stored in local state. As a result, any added or edited tasks will be lost when the page is reloaded. In the future, I plan to integrate a backend database to persist data across sessions.
 
 - **Authentication & Authorization**
   There is no user login or account system. Implementing authentication would allow each user to have their own task list stored on a server.
 
 - **Responsiveness**
   The current layout is static and not fully responsive on smaller screens.
+
+- **Cloud Sync**
+  While local persistence is implemented, tasks are only stored locally. Adding cloud sync would allow access across multiple devices.
 
 ## Contributing
 
