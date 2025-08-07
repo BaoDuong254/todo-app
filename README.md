@@ -12,16 +12,12 @@ This is a lightweight React project created using Vite. It demonstrates basic CR
 
     ```bash
     npm install
-    # or
-    yarn install
     ```
 
 2. **Start the development server**
 
     ```bash
     npm run dev
-    # or
-    yarn dev
     ```
 
 3. **Open in browser**
@@ -65,4 +61,4 @@ Please make sure to follow standard best practices:
 - Update/add any relevant documentation or tests.
 - Keep PRs focused on a single change or feature request.
 
-Thank you for your interest in contributing! 🚀
+Thank you for your interest in contributing!
